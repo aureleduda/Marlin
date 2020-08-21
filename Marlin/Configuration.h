@@ -34,7 +34,7 @@
  * - Extra features
  *
  * Advanced settings can be found in Configuration_adv.h
- *
+7 *
  */
 #define CONFIGURATION_H_VERSION 020005
 
@@ -1104,16 +1104,16 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 825
-#define Y_BED_SIZE 1500
+#define X_BED_SIZE 800
+#define Y_BED_SIZE 1490
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
-#define Z_MIN_POS 0
+#define X_MIN_POS -20
+#define Y_MIN_POS -10
+#define Z_MIN_POS -2
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 100
+#define Z_MAX_POS 98
 
 /**
  * Software Endstops
@@ -1141,7 +1141,7 @@
 #endif
 
 #if EITHER(MIN_SOFTWARE_ENDSTOPS, MAX_SOFTWARE_ENDSTOPS)
-  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+  #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
 /**
@@ -1224,7 +1224,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1273,7 +1273,7 @@
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #define EXTRAPOLATE_BEYOND_GRID
 
     //
     // Experimental Subdivision of the grid by Catmull-Rom method.
@@ -1370,8 +1370,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_Y_POINT 100  // Y point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing when homing all axes (G28).
 #endif
 
 // Homing speeds (mm/m)
